@@ -13,18 +13,19 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Cliente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String placaVeiculo;
+    private String cpf;
     private String telefone;
     private Boolean ativo;
 
     public Cliente(DadosCadastroClientes dados) {
         this.ativo = true;
         this.nome = dados.nome();
-        this.placaVeiculo = dados.placaVeiculo();
+        this.cpf = dados.cpf();
         this.telefone = dados.telefone();
     }
 
@@ -32,8 +33,8 @@ public class Cliente {
         if (dados.nome() != null){
             this.nome = dados.nome();
         }
-        if (dados.placaVeiculo() != null){
-            this.placaVeiculo = dados.placaVeiculo();
+        if (dados.cpf() != null){
+            this.cpf = dados.cpf();
         }
         if (dados.telefone() != null){
             this.telefone = dados.telefone();
