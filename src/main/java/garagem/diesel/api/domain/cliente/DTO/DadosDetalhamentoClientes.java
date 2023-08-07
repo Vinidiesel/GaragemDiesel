@@ -1,4 +1,6 @@
-package garagem.diesel.api.domain.cliente;
+package garagem.diesel.api.domain.cliente.DTO;
+
+import garagem.diesel.api.domain.cliente.Cliente;
 
 public record DadosDetalhamentoClientes(
         Long id,
